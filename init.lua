@@ -51,8 +51,8 @@ require("toggleterm").setup({
     direction = "float",
     float_opts = {
         border = "curved",
-        width = 100,
-        height = 20,
+        width = 150,
+        height = 30,
     },
     shade_terminals = true,
     terminal_mappings = true,
