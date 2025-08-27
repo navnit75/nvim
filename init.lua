@@ -29,6 +29,37 @@ vim.opt.formatoptions:remove("c")
 vim.opt.formatoptions:remove("r")
 vim.opt.formatoptions:remove("o")
 
+-- Set cursor to block in all modes
+-- vim.opt.guicursor = ""
+-- Some configurable settings
+vim.opt.guicursor = {
+    "n-v-c:block-Cursor", -- Normal, visual, command: block with normal cursor color
+    "i-ci-ve:block-rCursor", -- Insert modes: block with insert cursor color
+    "r-cr:block-iCursor", -- Replace modes: block with replace cursor color
+}
+-- Or if you want more control over different modes:
+-- vim.opt.guicursor = {
+--     "n-v-c:block", -- Normal, visual, command-line: block cursor
+--     "i-ci-ve:ver25", -- Insert, command-line insert, visual-exclude: vertical bar cursor
+--     "r-cr:hor20", -- Replace, command-line replace: horizontal bar cursor
+--     "o:hor50", -- Operator-pending: horizontal bar cursor
+--     "a:blinkwait700-blinkoff400-blinkon250", -- All modes: blink settings
+-- }
+
+-- Color
+-- vim.api.nvim_set_hl(0, "Cursor", { bg = "#f6f8fa", fg = "#24292f" })-- In my case this is decided by
+-- vim.api.nvim_set_hl(0, "Cursor", { bg = "#ecf0f1", fg = "#2c3e50" }) -- Normal Mode Gray cursor with white text
+-- vim.api.nvim_set_hl(0, "Cursor", { bg = "#ffffff", fg = "#ffffff" }) -- Normal mode: white
+vim.api.nvim_set_hl(0, "iCursor", { bg = "#ff6b6b", fg = "#ffffff" }) -- Replace mode: red
+vim.api.nvim_set_hl(0, "rCursor", { bg = "#4ecdc4", fg = "#ffffff" }) -- Insert mode: teal
+
+-- Configuration which character to show and how
+vim.opt.list = true
+vim.opt.listchars = {
+    space = "•",
+    trail = "•",
+}
+
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
