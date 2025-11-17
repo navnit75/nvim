@@ -65,7 +65,7 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
-local config = require("nvim-treesitter.configs")
+local config = require("nvim-treesitter.config")
 config.setup({
     ensure_installed = { "lua", "javascript", "typescript", "java", "cpp", "python" },
     sync_install = false,
