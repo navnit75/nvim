@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 require("config.lazy")
 require("mason").setup()
+
+-- vim.cmd.colorscheme("rose-pine")
 -- require("rose-pine").setup({
 --     styles = {
 --         italic = true,
@@ -13,16 +15,27 @@ require("mason").setup()
 --                 hi SignColumn guibg=NONE ctermbg=NONE
 --                 hi EndOfBuffer guibg=NONE ctermbg=NONE
 --         ]])
--- vim.cmd.colorscheme('rose-pine')
 
 -- AYU SETUP
--- require('ayu').setup({
---     mirage = false,
+-- require("ayu").setup({
+--     mirage = true,
 --     terminal = true,
---     overrides = {}
+--     overrides = {},
 -- })
 -- vim.cmd.colorscheme("ayu")
 vim.cmd.colorscheme("moonfly")
+--
+-- vim.cmd.colorscheme("catppuccin")
+--
+-- require("catppuccin").setup({
+--     flavour = "frappe", -- latte, frappe, macchiato, mocha
+--     background = {
+--         light = "frappe",
+--         dark = "frappe",
+--     },
+--     transparent_background = false,
+-- })
+
 vim.opt.termguicolors = true
 
 vim.opt.formatoptions:remove("c")
@@ -67,7 +80,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
 local config = require("nvim-treesitter.config")
 config.setup({
-    ensure_installed = { "lua", "javascript", "typescript", "java", "cpp", "python" },
+    ensure_installed = { "lua", "javascript", "typescript", "java", "cpp", "python", "smithy"},
     sync_install = false,
     highlight = {
         enable = true,
