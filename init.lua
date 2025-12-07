@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 require("config.lazy")
 require("mason").setup()
-
 -- vim.cmd.colorscheme("rose-pine")
 -- require("rose-pine").setup({
 --     styles = {
@@ -23,7 +22,7 @@ require("mason").setup()
 --     overrides = {},
 -- })
 -- vim.cmd.colorscheme("ayu")
-vim.cmd.colorscheme("moonfly")
+-- vim.cmd.colorscheme("moonfly")
 --
 -- vim.cmd.colorscheme("catppuccin")
 --
@@ -67,11 +66,11 @@ vim.api.nvim_set_hl(0, "iCursor", { bg = "#ff6b6b", fg = "#ffffff" }) -- Replace
 vim.api.nvim_set_hl(0, "rCursor", { bg = "#4ecdc4", fg = "#ffffff" }) -- Insert mode: teal
 
 -- Configuration which character to show and how
-vim.opt.list = true
-vim.opt.listchars = {
-    space = "•",
-    trail = "•",
-}
+-- vim.opt.list = true
+-- vim.opt.listchars = {
+-- space = "•",
+-- trail = "•",
+-- }
 
 local builtin = require("telescope.builtin")
 
@@ -80,7 +79,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem toggle left<CR>", {})
 local config = require("nvim-treesitter.config")
 config.setup({
-    ensure_installed = { "lua", "javascript", "typescript", "java", "cpp", "python", "smithy"},
+    ensure_installed = { "lua", "javascript", "typescript", "java", "cpp", "python", "smithy" },
     sync_install = false,
     highlight = {
         enable = true,
